@@ -1,4 +1,5 @@
 // components/RegisterForm.js
+"use client"
 import { useState, useContext } from 'react';
 import AuthContext from '../contexts/authContext';
 
@@ -6,7 +7,7 @@ interface RegisterProps {
     onSuccess: (user: any) => any;
   }
 
-export default function RegisterForm(props: RegisterProps) {
+export default function RegisterForm() {
   const { register } = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

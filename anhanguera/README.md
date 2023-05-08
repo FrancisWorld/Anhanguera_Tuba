@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Dependências
+- [NodeJS](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/)
+- [MongoDB](https://www.mongodb.com/)
 
-## Getting Started
+## Instalação
 
-First, run the development server:
+Use o [npm](https://www.npmjs.com/) para instalar todas as dependências do projeto.
+Para rodar o projeto é necessário ter o MongoDB instalado e rodando na porta 27017. Para isso, é possível utilizar o [Docker](https://www.docker.com/) para subir um container com o MongoDB.
+
+```bash
+npm install
+```
+
+## Uso
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configuração
+Crie um arquivo .env na raiz do projeto e adicione as seguintes variáveis de ambiente:
+```
+MONGODB_URI=<string>
+MONGODB_DB=<string>
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Documentação
+https://nextjs.org/docs
+https://mongoosejs.com/docs/guide.html
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
+## Contribuição
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Pull requests são bem-vindos. Para grandes mudanças, abra um problema primeiro para discutir o que você gostaria de mudar.
 
-## Learn More
+Certifique-se de atualizar os testes conforme apropriado.
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Clone o repositório
+$ git clone
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Docker
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+O projeto usa next-auth para autenticação, para isso é necessário criar um arquivo .env.local na raiz do projeto e adicionar as seguintes variáveis de ambiente:
+```
+NEXTAUTH_URL=http://localhost:3000
+NEXTAUTH_SECRET=<string>
+JWT_SECRET=<string>
+```
+Para rodar o projeto é necessário ter o MongoDB instalado e rodando na porta 27017. Para isso, é possível utilizar o Docker para subir um container com o MongoDB.
+```
+docker run --name mongodb -p 27017:27017 -d mongo
+```

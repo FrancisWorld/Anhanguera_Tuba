@@ -1,12 +1,14 @@
+"use client"
 // components/LoginForm.js
 import React, { useState, useContext } from 'react';
 import AuthContext from '../contexts/authContext';
+import { signIn } from 'next-auth/react';
 
 interface LoginProps {
     onSuccess: (user: any) => any;
   }
 
-export default function LoginForm(props: LoginProps) {
+export default function LoginForm() {
   const { login } = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -46,7 +48,7 @@ export default function LoginForm(props: LoginProps) {
           required
         />
       </div>
-      <button type="submit">Login</button>
+      <button onClick={() => signIn("google")} type="submit">Login</button>
     </form>
     </div>
   );
